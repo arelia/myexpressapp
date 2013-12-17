@@ -1,5 +1,29 @@
 extends layout
 
-block content
+block contentHeader
   h1= title
-  p Welcome to #{title}
+  p(class="subtitle") The app that keeps track of your roommate duties
+
+block contentTask
+  div(ng-controller="TodoCtrl" class="col-2-4")
+    h2 Tasks
+    form(ng-submit="addTodo()")
+      input(type="text" ng-model="todoText"  size="30" placeholder="add new task here")
+      input(class="btn-primary" type="submit" value="add")
+    ul(class="unstyled")
+      li(ng-repeat="todo in todos")
+        input(type="checkbox" ng-model="todo.done")
+        span(class="done-{{todo.done}}") {{todo.text}}
+    span(class="tooltip") {{remaining()}} of {{todos.length}} remaining &nbsp;
+    a(href="" ng-click="archive()" class="tooltip") archive completed tasks
+    
+block contentRoommate
+  div(class="col-2-4")
+    h2 Roommates
+    form(ng-submit="addRoommate()")
+      input(type="text" ng-model="roommateText"  size="30" placeholder="add new roommate here")
+      input(class="btn-primary" type="submit" value="add")
+
+block contentMatch
+  div(class="col-2-4")
+    h2 Assignments

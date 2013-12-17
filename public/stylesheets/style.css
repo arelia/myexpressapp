@@ -1,6 +1,11 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: aliceblue;
+}
+
+.col-2-4 {
+	width: 50%;
 }
 
 a {
@@ -9,4 +14,32 @@ a {
 
 li.ng-scope {
 	list-style: none;
+}
+
+.tooltip {
+	font-size: 75%;
+	font-weight: bold;
+}
+
+h1 {
+	font-size: 200%;
+	line-height: 100%;
+}
+
+h2 {
+	color: #555;
+	font-size: 150%;
+}
+
+.subtitle {
+	color: #555;
+	font-size: 150%;
+	line-height: 80%;
+}
+
+div {
+	background-color: #FFF;
+	padding: 2em;
+	margin-bottom: 2em;
+	box-sizing: border-box;
 }
